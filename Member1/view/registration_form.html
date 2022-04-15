@@ -1,0 +1,114 @@
+<!doctype html>
+	<html> 
+	<head >
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<link rel="stylesheet" type="text/css" href="../view/image.css">
+
+	</head>
+	<body>
+	<div style = "background:beige;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) ;"> 
+	<form action="../control/registration_form_jsaction.php" method="POST" name="registrationform" onsubmit="return isValid()">
+		<fieldset>
+			<legend><h3>Register New User</h3></legend>
+		     <label for="uname"><h4> User Name<span style="color: red;">*</span>: </label>
+			<input type="text" id="uname" name="uname" >
+			<span style="color: red"></span>
+			<br>
+			<br>
+			<label for="email">Email<span style="color: red;">*</span>: </label>
+			<input type="email" id="email" name="email" >
+			<span style="color: red"></span>
+			<br>
+			<br>
+			<label for="fname">First Name<span style="color: red;">*</span> :</label>
+			<input type="text" id="fname" name="fname" >
+			
+			<br>
+			<br>
+			<label for="lname">Last Name<span style="color: red;">*</span> :</label>
+			<input type="text" id="lname" name="lname" >
+			
+			<br>
+			<br>
+			<label for="pass">Password<span style="color: red;">*</span>:</label>
+			<input type="Password" id="pass" name="pass" >
+			<span style="color: red"></span>
+
+       
+			
+			<br><br>
+			<input type="submit" name="submit" value="Register" style="background: green;">
+			
+			
+	      </h4>
+	      
+	
+	    <p>Already have an account?<a href="../view/log_in.html">Click Here</a> to log in</p>
+
+	    </div>
+		</fieldset>
+		<script>
+			function isValid()
+			{
+				var flag= true;
+				var unameErr = document.getElementById("uname");
+				var uname = document.forms["registrationform"]["uname"].value;
+				unameErr.innerHTML="";
+
+				var emailErr = document.getElementById("email");
+				var email = document.forms["registrationform"]["email"].value;
+				emailErr.innerHTML="";
+
+				var fnameErr = document.getElementById("fname");
+				var fname = document.forms["registrationform"]["fname"].value;
+				fnameErr.innerHTML="";
+
+				var lnameErr = document.getElementById("lname");
+				var lname = document.forms["registrationform"]["lname"].value;
+				lnameErr.innerHTML="";
+
+				var passErr = document.getElementById("pass");
+				var pass = document.forms["registrationform"]["pass"].value;
+				passErr.innerHTML="";
+				
+				if(uname==="")
+				{
+					unameErr.innerHTML="first name cannot be empty";
+					flag = true;
+				}
+				if(email==="")
+				{
+					emailErr.innerHTML="email  cannot be empty";
+					flag = true;
+				}
+				if(fname==="")
+				{
+					fnameErr.innerHTML="first name cannot be empty";
+					flag = true;
+				}
+				if(lname==="")
+				{
+				    lnameErr.innerHTML="last name cannot be empty";
+					flag = true;
+				}
+				if(pass==="")
+				{
+				    passErr.innerHTML="last name cannot be empty";
+					flag = true;
+				}
+
+				return flag;
+			}
+
+
+		</script>
+		
+	</form>
+	
+</body>
+</html>
+
+
+
+			

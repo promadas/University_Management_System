@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Register courses</title>
+		<link rel="stylesheet" type="text/css" href="../view/image.css">
+	</head>
+	<body>
+	<div style = "background:beige;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) ;"> 
+	<form action="../control/register_course_action.php" method="GET" name="registercourses" onsubmit="return isValid()">
+		<fieldset>
+			<legend><h3>Offered Sections-2021-2022,Fall</h3></legend>
+			<label for="course"><h4>Courses<span style="color: red;">*</span>: </label>
+			<input type="text" id="course" name="course" >
+			<label for="section"><h4>Section<span style="color: red;">*</span>: </label>
+			<input type="text" id="section" name="section">
+			<label for="day"><h4>Day<span style="color: red;">*</span>: </label>
+			<input type="text" id="day" name="day">
+			
+			<label for="time"><h4>Time<span style="color: red;">*</span>: </label>
+			<input type="Time" id="time" name="time">
+			<br>
+			<br>
+			<input type="submit" name="submit" value="Register" style="background: green;">
+		</h4>
+	
+</fieldset>
+
+	<script>
+			function isValid()
+			{
+				var flag= true;
+				var courseErr = document.getElementById("course");
+				var course = document.forms["registercourses"]["course"].value;
+				courseErr.innerHTML="";
+
+				var sectionErr = document.getElementById("section");
+				var section = document.forms["registercourses"]["section"].value;
+				sectionErr.innerHTML="";
+
+				var dayErr = document.getElementById("day");
+				var day = document.forms["registercourses"]["day"].value;
+				dayErr.innerHTML="";
+
+				var timeErr = document.getElementById("time");
+				var time = document.forms["registercourses"]["time"].value;
+				timeErr.innerHTML="";
+				if(course==="")
+				{
+					courseErr.innerHTML="register your courses";
+					flag=false;
+				}
+				if(section==="")
+				{
+					sectionErr.innerHTML="declare section";
+					flag=false;
+				}
+				if(day==="")
+				{
+					dayErr.innerHTML="declare section";
+					flag=false;
+				}
+				if(time==="")
+				{
+					dayErr.innerHTML="declare time";
+					flag=false;
+				}
+				return flag;
+				
+
+			}
+		
+      
+
+
+
+	</script>
+
+    </form>
+	</body>
+	</html>

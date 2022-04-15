@@ -1,0 +1,67 @@
+<!doctype html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Log in Form</title>
+		<link rel="stylesheet" type="text/css" href="../view/image.css">
+	</head>
+	<body>
+		
+		
+			<div style = "background: beige; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+			<form action="../control/log_in_jsaction.php" method="POST" name="loginform" onsubmit="return isValid()">
+			<fieldset>
+			<legend><h2 >Log in Form</h2></legend>
+			<label for="uname"><h4>Username<span style="color: red;">*</span>:</label>
+			<input type="text" id="uname" name="uname" >
+			<span style="color: red"></span>
+			<br>
+			<br>
+			
+			<br>
+			<label for="pass">Password<span style="color: red;">*</span>:</label>
+			<input type="Password" id="pass" name="pass" >
+			<span style="color: red"></span>
+		
+	
+		<br>
+		<input type="Submit" name="submit" value="log in" style="background:skyblue;">
+
+	</form>
+	</h4>
+	    <p>Don't have an account?Do<a href="../view/registration_form.html"> Register yourself </p></a> first
+	    
+	</div>
+</fieldset>
+     <script>
+       function isValid()
+       {
+	        var flag= true;
+		    var unameErr = document.getElementById("uname");
+			var uname = document.forms["loginform"]["uname"].value;
+			unameErr.innerHTML="";
+
+			var passErr = document.getElementById("pass");
+			var pass = document.forms["loginform"]["pass"].value;
+			passErr.innerHTML="";
+
+			if(uname==="")
+			{
+			  unameErr.innerHTML="first name cannot be empty";
+			  flag = false;
+			}
+			if(pass==="")
+			{
+			  passErr.innerHTML="last name cannot be empty";
+			  flag = false;
+			}
+			return flag;
+		}
+	</script>
+</form>
+
+
+
+	</body>
+	</html>
+	
